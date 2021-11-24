@@ -1,4 +1,4 @@
-#Identifier-Name-Linter
+# Identifier-Name-Linter
 
 ### Pre-requisities:
 * C-compiler is installed on the machine
