@@ -12,4 +12,4 @@ Use the following command as a reference:
 
 or
 
-*'path-to-python.exe' 'path-to-main.py' 'path-to-public-git-repo' 'file-extension' 'programming-language-name' 'path-for-output1' 'path-for-output-2'*
+*'path-to-python.exe' 'path-to-main.py' 'path-to-git-repo' 'file-extension' 'programming-language-name' 'path-for-output1' 'path-for-output-2'*
