@@ -12,12 +12,16 @@ Language.build_library(
   # Include one or more languages
   [
     'Language-Implementations/tree-sitter-javascript',
-    'Language-Implementations/tree-sitter-python'
+    'Language-Implementations/tree-sitter-python',
+    'Language-Implementations/tree-sitter-go',
+    'Language-Implementations/tree-sitter-ruby'
   ]
 )
 
 JS_LANGUAGE = Language('build/my-languages.so', 'javascript')
 PY_LANGUAGE = Language('build/my-languages.so', 'python')
+GO_LANGUAGE = Language('build/my-languages.so', 'go')
+RB_LANGUAGE = Language('build/my-languages.so', 'ruby')
 
 identifier_list = ''
 identifiers_with_violation_list = ''
@@ -45,14 +49,14 @@ def read_git_folder(repo: Repository, path: str, file_extension: str):
 def read_git_repo(repo_name: str):
     if len(repo_name.split('github.com/')) > 1:
         repo_name = repo_name.split('github.com/')[1]
-    # To Do: Add access token of a dummy GIT user
-    g = Github("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")
-    # try:
-    repo = g.get_repo(repo_name)
+    g = Github("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")
+    try:
+        repo = g.get_repo(repo_name)
+    except:
+        print("GIT Repo not found")
+        sys.exit()
     read_git_folder(repo, "", sys.argv[2])
-    # except:
-    #     print("GIT Repo not found")
-    #     sys.exit()
+
 
 
 def write_to_file(path: str, file_name: str, file_content: str):
@@ -71,6 +75,10 @@ def create_parser(file_extension: str, lang: str) -> Parser:
         new_parser.set_language(PY_LANGUAGE)
     elif lang.lower() == "javascript" and file_extension.lower() == ".js":
         new_parser.set_language(JS_LANGUAGE)
+    elif lang.lower() == "go" and file_extension.lower() == ".go":
+        new_parser.set_language(GO_LANGUAGE)
+    elif lang.lower() == "ruby" and file_extension.lower() == ".rb":
+        new_parser.set_language(RB_LANGUAGE)
     else:
         print("Language or File Extension Combination Not Supported")
         sys.exit()
