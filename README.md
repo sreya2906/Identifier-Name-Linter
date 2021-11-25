@@ -39,6 +39,8 @@ ${path-to-python.exe} ${path-to-main.py} ${path-to-git-repo} ${file-extension} $
 Right click main.py in PyCharm -> Modify Run Configurations -> Add all required parameters -> Save Configurations -> Run main.py
 ```
 
+> The first run takes few extra seconds to complete as it clones all the required tree_sitter language parsers. This step is not repeated in consecutive runs. 
+
 
 ### Verifying the Output files:
 * `output1.txt` and `output2.txt` file will be generated at the respective paths specified while running main.py
