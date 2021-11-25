@@ -9,6 +9,6 @@ setup(name='Identifier-Name-Linter',
       license='MIT',
       python_requires='>3.6',
       install_requires=[
-          'PyGithub', 'tree_sitter', 'pyenchant'
+          'PyGithub', 'tree_sitter', 'pyenchant', 'GitPython'
       ],
       zip_safe=False)
