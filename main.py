@@ -5,6 +5,17 @@ import re
 from github import Github, Repository, ContentFile
 from tree_sitter import Language, Parser, Node
 
+from git.repo.base import Repo
+
+if not os.path.exists("./Language-Implementations/tree-sitter-python"):
+    Repo.clone_from("https://github.com/tree-sitter/tree-sitter-python", "./Language-Implementations/tree-sitter-python")
+if not os.path.exists("./Language-Implementations/tree-sitter-javascript"):
+    Repo.clone_from("https://github.com/tree-sitter/tree-sitter-javascript", "./Language-Implementations/tree-sitter-javascript")
+if not os.path.exists("./Language-Implementations/tree-sitter-ruby"):
+    Repo.clone_from("https://github.com/tree-sitter/tree-sitter-ruby", "./Language-Implementations/tree-sitter-ruby")
+if not os.path.exists("./Language-Implementations/tree-sitter-go"):
+    Repo.clone_from("https://github.com/tree-sitter/tree-sitter-go", "./Language-Implementations/tree-sitter-go")
+
 Language.build_library(
   # Store the library in the `build` directory
   'build/my-languages.so',
