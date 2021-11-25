@@ -11,6 +11,8 @@
 * If PyCharm or any other IDE is not used, then set up the Virtual Environment by using steps from this [link](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/) 
 
 ### Program Set-Up:
+* PyCharm automatically downloads all required Python Library dependencies once Virtual Environment is set up. If libraries are installed, then we can skip the below steps of Program Set-Up Section
+* If the libraries are not installed, then please follow below steps:
 * Once project set up is done, run the `setup.py` file with `develop` as parameter. Refer below for sample code:
     ```
     python setup.py develop
