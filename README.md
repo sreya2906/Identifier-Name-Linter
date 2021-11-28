@@ -43,6 +43,7 @@ Right click main.py in PyCharm -> Modify Run Configurations -> Add all required 
 
 > The first run takes few extra seconds to complete as it clones all the required tree_sitter language parsers. This step is not repeated in consecutive runs. 
 
+> Unauthenticated access to GITHub APIs has a limitation of 60 requests per hour, so testing on very big GIT repos might get interrupted after 2-3 attempts.
 
 ### Verifying the Output files:
 * `output1.txt` and `output2.txt` file will be generated at the respective paths specified while running main.py
