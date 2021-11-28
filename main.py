@@ -60,7 +60,7 @@ def read_git_folder(repo: Repository, path: str, file_extension: str):
 def read_git_repo(repo_name: str):
     if len(repo_name.split('github.com/')) > 1:
         repo_name = repo_name.split('github.com/')[1]
-    g = Github("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")
+    g = Github("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")
     try:
         repo = g.get_repo(repo_name)
     except:
